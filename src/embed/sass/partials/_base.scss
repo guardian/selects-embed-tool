@@ -3,3 +3,16 @@ html {
     margin: 0;
     font-family: 'Guardian Text Sans Web';
 }
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    max-width: 420px;
+    background-color: $c-white;
+}
