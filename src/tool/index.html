@@ -67,10 +67,10 @@
 
         .options__sub-label {
             font-size: 16px;
-            line-height: 0.9;
+            line-height: 1.1;
             font-family: 'Guardian Text Sans Web';
             color: #676767;
-            margin: 4px 12px 4px 0;
+            margin: 3px 12px 4px 0;
             float: left;
             width: 120px;
             font-weight: normal;
@@ -80,6 +80,10 @@
             min-width: 120px;
             width: calc(100% - 132px);
             box-sizing: border-box;
+        }
+
+        .options__input--textarea {
+            height: 200px;
         }
 
         .hidden {
@@ -101,10 +105,12 @@
             width: calc(100% - 60px);
         }
 
-        input {
+        input,
+        textarea {
             padding: 8px;
             font-size: 16px;
             font-family: 'Guardian Text Sans Web';
+            resize: none;
         }
 
         select {
@@ -120,15 +126,39 @@
     <main>
         <div class='options'>
             <div class='option'>
-                <h2 class='options__sub-label'>Headline</h2>
-                <input class='options__input' type='text' value='vs New York Giants' name='headline'>
+                <h2 class='options__sub-label'>Vertical</h2>
+                <select name='colour-scheme' class='options__input options__input--team'>
+                    <option value='news'>News</option>
+                    <option value='opinion'>Opinion</option>
+                    <option value='sport'>Sport</option>
+                    <option value='lifestyle'>Lifestyle</option>
+                    <option value='arts'>Arts</option>
+                </select>
             </div>
 
             <div class='option'>
-                <h2 class='options__sub-label'>Section</h2>
-                <select name='colour-scheme' class='options__input options__input--team'>
-                    <option value='generic'>No team</option>
-                </select>
+                <h2 class='options__sub-label'>Original Headline</h2>
+                <input class='options__input' type='text' value='Cool article headline that we have found' name='headline'>
+            </div>
+
+            <div class='option'>
+                <h2 class='options__sub-label'>Link to original</h2>
+                <input class='options__input' type='text' value='https://www.theguardian.com/film/2016/jul/13/dwayne-the-rock-johnson-worlds-highest-paid-actor-reasons-why' name='headlineLink'>
+            </div>
+
+            <div class='option'>
+                <h2 class='options__sub-label'>Original Publication</h2>
+                <input class='options__input' type='text' value='Not The Guardian' name='publine'>
+            </div>
+
+            <div class='option'>
+                <h2 class='options__sub-label'>Link to publication</h2>
+                <input class='options__input' type='text' value='https://www.theguardian.com' name='pubLink'>
+            </div>
+
+            <div class='option'>
+                <h2 class='options__sub-label'>Reason</h2>
+                <textarea class='options__input options__input--textarea' name='reason'>We picked this article because it was good</textarea>
             </div>
         </div>
 

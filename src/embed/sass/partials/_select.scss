@@ -20,7 +20,7 @@
 
 .select__content {
     position: relative;
-    color: #121212;
+    color: $c-black;
     font-family: 'Guardian Text Sans Web';
     font-weight: 400;
     font-size: 14px;
@@ -48,43 +48,32 @@
 
 .select-logo__guardian,
 .select-logo__tagline {
-    fill: #121212;
-}
-
-.select-logo__select {
-    fill: #bf3682;
-}
-
-.select-logo__bracket-upper {
-    fill: #f3abcd;
-}
-
-.select-logo__bracket-lower {
-    fill: #7b1b7a;
+    fill: $c-black;
 }
 
 .select__source {
-    color: #bf3682;
     display: block;
     margin-bottom: 18px;
-}
 
-.select__source a {
-    color: inherit;
-    border-bottom: 1px solid transparent;
+    a {
+        color: inherit;
+        border-bottom: 1px solid transparent;
+    }
 }
 
 .select__headline {
     display: block;
     font-size: 18px;
+
+    a {
+        color: $c-black;
+        border-bottom: 1px solid transparent;
+    }
 }
 
-.select__headline a {
-    color: #121212;
-    border-bottom: 1px solid transparent;
-}
-
-.select__source a:hover,
-.select__headline a:hover {
-    border-bottom-color: #f3abcd;
+.select__reason {
+    a {
+        color: $c-black;
+        border-bottom: 1px solid $c-black;
+    }
 }
