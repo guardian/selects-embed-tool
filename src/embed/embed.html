@@ -26,12 +26,7 @@
         </a>
 
         <div class='select__content'>
-            <span class='select__headline'><a target="_parent" href='LINK'>HEADLINE GOES HERE</a></span>
-            <span class='select__source'>Originally published in <a target="_parent" href='LINK TO PUB'>PUBLICATION</a></span>
-            <span class='select__reason'>
-                REASON GOES HERE
-                <br /><br /><a href='http://www.theguardian.com/us-news/series/guardian-selects' target="_parent">Guardian Selects</a>, curated by our editors, brings exceptional content from across the web to our readers.
-            </span>
+
         </div>
     </div>
 
@@ -59,16 +54,16 @@
             return query_string;
         }
 
-        function injectParams() {
-            var elementsToBePopulated = document.getElementsByClassName('input');
+        function injectHTML() {
+            console.log(params);
+            var html = "<span class='select__headline'><a target='_parent' href='" + params.headlineLink + "'>" + params.headline + "</a></span>" +
+                       "<span class='select__source'>Originally published in <a target='_parent' href='" + params.pubLink + "'>" + params.publine + "</a></span>" +
+                       "<span class='select__reason'>" +
+                            params.reason +
+                            "<br /><br /><a href='http://www.theguardian.com/us-news/series/guardian-selects' target='_parent'>Guardian Selects</a>, curated by our editors, brings exceptional content from across the web to our readers." +
+                        "</span>";
 
-            for (var i = 0; i < elementsToBePopulated.length; i++) {
-                var elementKey = elementsToBePopulated[i].getAttribute('data-input');
-
-                if (params[elementKey]) {
-                    elementsToBePopulated[i].innerHTML = params[elementKey];
-                }
-            }
+            document.getElementsByClassName('select__content')[0].innerHTML = html;
         }
 
         function setClass() {
@@ -79,7 +74,7 @@
         function init() {
             params = getPageParameters(document.location.href);
 
-            injectParams();
+            injectHTML();
             setClass();
         }
 
