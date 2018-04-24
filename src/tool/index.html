@@ -186,7 +186,7 @@
             var url = defaultUrl + '?'
 
             $.each(data, function(key, value) {
-                url += key + '=' + encodeURI(value) + '&'
+                url += key + '=' + encodeURIComponent(value) + '&'
             });
 
             url = url.substring(0, url.length - 1);
