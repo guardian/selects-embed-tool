@@ -20,12 +20,10 @@
     </div>
 
     <script class="template" type="text/x-handlebars-template">
-        <div class='wrapper wrapper--{{ handlise vertical }}'>
-            <div class='header'>
-                <h1 class='title'>{{ series }}</h1>
-            </div>
+        <div class='wrapper'>
+            <img class='logo' src='./logos/{{ publisher }}.png' />
             <div class="content">
-                {{ copy }}
+                This story was first published {{{ description publisher }}} {{ copy }}
             </div>
         </div>
     </script>
@@ -56,7 +54,34 @@
 
         function init() {
             Handlebars.registerHelper('handlise', function(string) {
-                return string.toLowerCase().replace(/ /g, '-').replace(/\//g, '');
+                if (string) {
+                    return string.toLowerCase().replace(/ /g, '-').replace(/\//g, '');
+                }
+            });
+
+            Handlebars.registerHelper('description', function(string) {
+                switch(string) {
+                    case 'anxy-mag':
+                        return 'in <a target=\'_parent\' href=\'https://anxymag.com/\'>Anxy Magazine</a>. Anxy explores personal narratives and mental health through an artful and creative lens.'
+                    case 'ps-mag':
+                        return 'in <a target=\'_parent\' href=\'https://psmag.com/\'>PS Mag</a>. TK TK TK.'
+                    case 'narratively':
+                        return 'by <a target=\'_parent\' href=\'http://narrative.ly/\'>Narratively</a>. TK TK TK.'
+                    case 'california-sunday-magazine':
+                        return 'in <a target=\'_parent\' href=\'https://www.californiasunday.com/\'>California Sunday Magazine</a>. TK TK TK.'
+                    case 'popup-magazine':
+                        return 'in <a target=\'_parent\' href=\'https://www.popupmagazine.com/\'>Popup Magazine</a>. TK TK TK.'
+                    case 'medium':
+                        return 'by <a target=\'_parent\' href=\'https://medium.com/\'>Medium</a>. TK TK TK.'
+                    case 'longreads':
+                        return 'by <a target=\'_parent\' href=\'https://longreads.com/\'>Longreads</a>. TK TK TK.'
+                    case 'grist':
+                        return 'by <a target=\'_parent\' href=\'https://grist.org/\'>Grist</a>. TK TK TK.'
+                    case 'texas-tribune':
+                        return 'in <a target=\'_parent\' href=\'https://www.texastribune.org/\'>the Texas Tribune</a>. TK TK TK.'
+                    default:
+                        return ''
+                }
             });
 
             var source = document.getElementsByClassName('template')[0].innerHTML;

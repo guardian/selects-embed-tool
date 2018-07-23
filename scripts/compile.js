@@ -42,6 +42,7 @@ if (specs.isNewVersion) {
 
 fs.emptyDirSync(path);
 
+fs.copySync('./src/embed/logos/', path + 'embed/guardian-selects/v' + version + '/logos');
 assets.css(path, assetPath, version);
 assets.html(path, assetPath, version);
 assets.copy(path);

@@ -135,7 +135,7 @@
         .preview__iframe {
             border: 0;
             height: 300px;
-            width: 380px;
+            width: 180px;
             background-color: #fff;
             margin: 0 auto;
             display: block;
@@ -221,6 +221,7 @@
             var url = defaultUrl + '?'
 
             $.each(data, function(key, value) {
+                console.log(value);
                 url += key + '=' + encodeURIComponent(value) + '&'
             });
 

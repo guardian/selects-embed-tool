@@ -1,19 +1,13 @@
 [
     {
-        "name": "Vertical",
+        "name": "Publisher",
         "type": "select",
-        "options": ["News", "Opinion", "Sport", "Lifestyle", "Arts"]
-    },
-
-    {
-        "name": "Series",
-        "type": "text",
-        "default": "Replace me with an example"
+        "options": ["Anxy Mag" , "PS Mag", "Narratively", "California Sunday Magazine", "Popup Magazine", "Outside Mag", "Medium", "Longreads", "Grist", "Texas Tribune"]
     },
 
     {
         "name": "Copy",
         "type": "textarea",
-        "default": "Replace me with an example"
+        "default": ""
     }
 ]
