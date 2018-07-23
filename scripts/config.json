@@ -8,5 +8,6 @@
         "path": "",
         "bucket": "gdn-cdn"
     },
-    "version": 1
+    "name": "Guardian Selects",
+    "version": 2
 }

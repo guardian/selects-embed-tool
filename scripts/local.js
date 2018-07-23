@@ -8,15 +8,12 @@ var config = require('../scripts/config.json');
 watch('src', function(file) {
     var fileExt = file.substring(file.lastIndexOf('.') + 1);
 
-    if (fileExt === 'html' || fileExt === 'svg') {
+    if (fileExt === 'html' || fileExt === 'svg' || fileExt === 'json') {
         console.log('updating html');
         cmd.get('npm run compile -- local preview html', function(data) { console.log(data); });
     } else if (fileExt === 'scss') {
         console.log('updating css');
         cmd.get('npm run compile -- local preview css', function(data) { console.log(data); });
-    } else if (fileExt === 'js') {
-        console.log('updating js');
-        cmd.get('npm run compile -- local preview js', function(data) { console.log(data); });
     } else {
         console.log('non-watchable file extension changed :' + fileExt);
     }
@@ -29,8 +26,7 @@ var file = new static.Server('./.build', {
     }
 });
 
-console.log('serving embedded atom at http://localhost:' + config.local.port + '/index.html')
-console.log('serving the raw atom at http://localhost:' + config.local.port + '/main.html');
+console.log('Serving the tool at http://localhost:' + config.local.port + '/tools/' + config.name.toLowerCase().replace(/ /g, '-').replace(/\//g, ''));
 
 require('http').createServer(function (request, response) {
     request.addListener('end', function () {
